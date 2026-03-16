@@ -45,6 +45,7 @@
             </div>
         </div>
     </div><!--====== Search Modal From ======-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--====== Start Preloader ======-->
     <!--====== End Preloader ======-->
     <!--====== Start Overlay ======-->
@@ -58,69 +59,177 @@
                 <div class="primary-menu">
                     <!--====  Site Branding  ===-->
                     <div class="site-branding">
-                        <a href="" class="brand-logo"><img src="assets/logo.png" alt="Brand Logo"></a>
+                        <a href="./index.html" class="brand-logo"><img src="assets/logo.png" alt="Brand Logo"></a>
                     </div>
                     <!--=== Main Menu ===-->
                     <div class="theme-nav-menu">
                         <!--=== Menu Top ===-->
                         <div class="theme-menu-top d-block d-xl-none">
                             <div class="site-branding">
-                                <a href="" class="brand-logo"><img src="assets/logo 1 (1).png"
+                                <a href="./index.html" class="brand-logo"><img src="assets/logo 1 (1).png"
                                         alt="Brand Logo"></a>
                             </div>
                         </div>
                         <!--=== Main Menu ===-->
-                        <nav class="main-menu">
-                            <ul>
-                                <li class="menu-item "><a href="">Home</a>
-                                    <!-- <ul class="sub-menu">
-                                            <li><a href="index.html">Home One</a></li>
-                                            <li><a href="index-2.html">Home Two</a></li>
-                                            <li><a href="index-3.html">Home Three</a></li>
-                                        </ul> -->
-                                </li>
-                                <li class="menu-item"><a href="">About</a></li>
-                                <li class="menu-item "><a href="#">Services</a>
-                                    <!-- <ul class="sub-menu">
-                                            <li><a href="services.html">Our Services</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
-                                        </ul> -->
-                                </li>
-                                <li class="menu-item "><a href="#">Pages</a>
-                                    <!-- <ul class="sub-menu">
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project-details.html">Project Details</a></li>
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="team-details.html">Team Details</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="faqs.html">Faqs</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul> -->
-                                </li>
-                                <li class="menu-item "><a href="#">Blog</a>
-                                    <!-- <ul class="sub-menu">
-                                            <li><a href="blog-grid.html">Blog Grid</a></li>
-                                            <li><a href="blog-standard.html">Blog Standard</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul> -->
-                                </li>
-                                <li class="menu-item"><a href="">Contact Us</a></li>
-                            </ul>
-                        </nav>
+                   <nav class="main-menu">
+<ul>
+
+<li class="menu-item"><a href="index.html">Home</a></li>
+<li class="menu-item"><a href="about.html">About Us</a></li>
+
+<li class="menu-item-has-children">
+<a href="#">Our Products</a>
+<ul class="sub-menu">
+<li class="menu-item-has-children">
+<a href="#">Leetx <i class="fa-solid fa-angle-down"></i></a>
+
+<ul class="sub-menu">
+<li><a href="#">Transducerized Tightening System</a></li>
+<li><a href="#">Automatic Screw Feeding System</a></li>
+<li><a href="#">Servo Press System</a></li>
+<li><a href="#">Smart Integrated Assembly Analysis</a></li>
+</ul>
+</li>
+
+<li class="menu-item-has-children">
+<a href="#">Centronsys <i class="fa-solid fa-angle-down"></i></a>
+
+<ul class="sub-menu">
+<li><a href="#">Feeding System</a></li>
+<li><a href="#">Metering System</a></li>
+<li><a href="#">Dispensing Module</a></li>
+<li><a href="#">Transfer System</a></li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li class="menu-item has-sub">
+<a href="#">Applications <i class="fa-solid fa-angle-down"></i></a>
+<ul class="sub-menu">
+<li><a href="#">Leetx</a></li>
+<li><a href="#">Centronsys</a></li>
+</ul>
+</li>
+
+<li class="menu-item"><a href="contact.html">Contact Us</a></li>
+
+</ul>
+</nav>
+
+
+<style>
+    .main-menu ul{
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.main-menu li{
+position:relative;
+}
+
+.main-menu a{
+display:block;
+padding:12px 20px;
+text-decoration:none;
+}
+
+/* hide dropdown */
+.sub-menu{
+display:none;
+background:#fff;
+min-width:220px;
+}
+
+/* desktop */
+@media(min-width:992px){
+
+.main-menu > ul > li{
+display:inline-block;
+}
+
+.sub-menu{
+position:absolute;
+}
+
+.sub-menu li .sub-menu{
+left:100%;
+top:0;
+position:absolute;
+}
+
+.main-menu li:hover > .sub-menu{
+display:block;
+}
+
+}
+
+/* mobile */
+@media(max-width:991px){
+
+.main-menu li{
+display:block;
+}
+
+.sub-menu{
+position:static;
+width:100%;
+}
+
+
+}
+
+@media(max-width:991px){
+
+.sub-menu{
+display:none;
+position:static;
+width:100%;
+background:#fff;
+}
+
+.sub-menu.show{
+display:block;
+}
+
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const dropdownLinks = document.querySelectorAll(".menu-item-has-children > a");
+
+dropdownLinks.forEach(function(link){
+
+link.addEventListener("click", function(e){
+
+if(window.innerWidth <= 991){
+
+e.preventDefault(); // stop # in URL
+
+let parent = this.parentElement;
+let submenu = parent.querySelector(".sub-menu");
+
+if(submenu){
+submenu.classList.toggle("show");
+}
+
+}
+
+});
+
+});
+
+});
+</script>
+
+
                         <!--=== Nav Button ===-->
-                        <div class="theme-nav-button mt-20 d-block d-md-none">
-                            <a href="" class="theme-btn gradient-btn">Get A Quote</a>
-                        </div>
-                        <!--===  Menu Bottom ===-->
-                        <!-- <div class="theme-menu-bottom mt-50 d-block d-xl-none">
-                            <h5>Follow Us</h5>
-                            <ul class="social-link">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
+                        <!-- <div class="theme-nav-button mt-20 d-block d-md-none">
+                            <a href="" class="theme-btn gradient-btn">Contact Us</a>
                         </div> -->
+
                     </div>
                     <!--=== Header Nav Right ===-->
                     <div class="nav-right-item">
@@ -128,7 +237,7 @@
                                 <div class="search-btn" data-bs-toggle="modal" data-bs-target="#search-modal"><i class="far fa-search"></i></div>
                             </div> -->
                         <div class="nav-button d-none d-md-block">
-                            <a href="" class="theme-btn gradient-btn">Get A Quote</a>
+                            <a href="" class="theme-btn gradient-btn">Contact Us</a>
                         </div>
                         <div class="navbar-toggler">
                             <span></span>
@@ -146,61 +255,320 @@
             <main>
                 <!--======  Start Hero Section  ======-->
                 <section class="orbia-hero_one">
-                    <!-- Hero Wrapper -->
-                    <div class="hero-wrapper bg_cover"
-                        data-src="https://www.leetx.com/en/web/upload/2024/07/24/17217936154906r4670.png">
-                        <!-- <div class="hero-shape shape-one"><img src="assets/images/home-one/hero/hero-shape2.png" alt="shape"></div>
-                            <div class="hero-shape shape-two"><img src="assets/images/home-one/hero/hero-shape1.png" alt="shape"></div> -->
-                        <div class="container-fluid">
-                            <div class="row justify-content-center justify-content-xl-start">
-                                <div class="col-xl-6 col-lg-10">
-                                    <!-- Hero Content -->
-                                    <div class="hero-content text-center text-xl-start">
-                                        <!-- <span class="tag-line" data-aos="fade-down" data-aos-duration="1500">Smarter
-                                            Tech for Tomorrow</span> -->
-                                        <h1 class="text-anm"><span>High-Precision </span> Intelligent Servo
-                                            <span>Press System</span>
-                                        </h1>
-                                        <p data-aos="fade-up" data-aos-duration="1500">Advanced electric press
-                                            technology engineered for accurate, energy-efficient, and high-speed
-                                            assembly operations in modern manufacturing environments.</p>
-                                        <div class="hero-button-wrap">
-                                            <div class="orbia-button" data-aos="fade-up" data-aos-duration="1500">
-                                                <a href="" class="theme-btn gradient-btn">Get A Quote</a>
-                                            </div>
-                                            <!-- <div class="orbia-avatar-box" data-aos="fade-up" data-aos-duration="1700">
-                                                    <div class="avatar-list">
-                                                        <ul>
-                                                            <li><img src="assets/images/home-one/hero/avatar-img1.jpg" alt="avatar image"></li>
-                                                            <li><img src="assets/images/home-one/hero/avatar-img2.jpg" alt="avatar image"></li>
-                                                            <li><img src="assets/images/home-one/hero/avatar-img3.jpg" alt="avatar image"></li>
-                                                            <li><span>10+</span></li>
-                                                        </ul>
-                                                        <div class="text">
-                                                            <div class="ratings">
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star"></i>
-                                                                <i class="fas fa-star-half"></i>
-                                                            </div>
-                                                            <h6>20K+ users</h6>
-                                                        </div>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <div class="swiper hero-slider">
+
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="hero-wrapper bg_cover"
+                                    style="background-image:url('https://www.leetx.com/en/web/upload/2024/07/24/17217936154906r4670.png');">
+
+                                    <div class="container-fluid">
+                                        <div class="row justify-content-center justify-content-xl-start">
+                                            <div class="col-xl-6 col-lg-10">
+
+                                                <div class="hero-content text-center text-xl-start">
+
+                                                    <h1>
+                                                        <span>High-Precision</span>
+                                                        Intelligent Servo
+                                                        <span>Press System</span>
+                                                    </h1>
+
+                                                    <p>
+                                                        Advanced electric press technology engineered for accurate,
+                                                        energy-efficient, and high-speed assembly operations.
+                                                    </p>
+
+                                                    <div class="hero-button-wrap">
+                                                        <a href="#" class="theme-btn gradient-btn">Contact Us</a>
                                                     </div>
-                                                </div> -->
+
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-10">
-                                    <!-- Hero Image -->
-                                    <!-- <div class="hero-image">
-                                            <img src="assets/images/home-one/hero/hero-img1.png" alt="image">
-                                        </div> -->
+
                                 </div>
                             </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <div class="hero-wrapper bg_cover"
+                                    style="background-image:url('https://www.leetx.com/en/web/upload/2025/09/16/17579945808065b1fyg.png');">
+
+                                    <div class="container-fluid">
+                                        <div class="row justify-content-center justify-content-xl-start">
+                                            <div class="col-xl-6 col-lg-10">
+
+                                                <div class="hero-content text-center text-xl-start">
+
+                                                    <h1>
+                                                        <span>Smart</span>
+                                                        Industrial Automation
+                                                        <span>Solutions</span>
+                                                    </h1>
+
+                                                    <p>
+                                                        Improve productivity and precision with advanced automation
+                                                        technologies designed for modern factories.
+                                                    </p>
+
+                                                    <div class="hero-button-wrap">
+                                                        <a href="#" class="theme-btn gradient-btn">Contact Us</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide">
+                                <div class="hero-wrapper bg_cover"
+                                    style="background-image:url('https://www.leetx.com/en/web/upload/2024/08/16/172377948318496ks4x.jpg');">
+
+                                    <div class="container-fluid">
+                                        <div class="row justify-content-center justify-content-xl-start">
+                                            <div class="col-xl-6 col-lg-10">
+
+                                                <div class="hero-content text-center text-xl-start">
+
+                                                    <h1>
+                                                        <span>Smart</span>
+                                                        Industrial Automation
+                                                        <span>Solutions</span>
+                                                    </h1>
+
+                                                    <p>
+                                                        Improve productivity and precision with advanced automation
+                                                        technologies designed for modern factories.
+                                                    </p>
+
+                                                    <div class="hero-button-wrap">
+                                                        <a href="#" class="theme-btn gradient-btn">Contact Us</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide">
+                                <div class="hero-wrapper bg_cover"
+                                    style="background-image:url('https://www.centronsys.com/en/web/upload/2025/09/16/1758010466244lozx8.png');">
+
+                                    <div class="container-fluid">
+                                        <div class="row justify-content-center justify-content-xl-start">
+                                            <div class="col-xl-6 col-lg-10">
+
+                                                <div class="hero-content text-center text-xl-start">
+
+                                                    <h1>
+                                                        <span>Smart</span>
+                                                        Industrial Automation
+                                                        <span>Solutions</span>
+                                                    </h1>
+
+                                                    <p>
+                                                        Improve productivity and precision with advanced automation
+                                                        technologies designed for modern factories.
+                                                    </p>
+
+                                                    <div class="hero-button-wrap">
+                                                        <a href="#" class="theme-btn gradient-btn">Contact Us</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide">
+                                <div class="hero-wrapper bg_cover"
+                                    style="background-image:url('https://www.centronsys.com/en/web/upload/2025/09/16/17580104561122vtmmy.png');">
+
+                                    <div class="container-fluid">
+                                        <div class="row justify-content-center justify-content-xl-start">
+                                            <div class="col-xl-6 col-lg-10">
+
+                                                <div class="hero-content text-center text-xl-start">
+
+                                                    <h1>
+                                                        <span>Smart</span>
+                                                        Industrial Automation
+                                                        <span>Solutions</span>
+                                                    </h1>
+
+                                                    <p>
+                                                        Improve productivity and precision with advanced automation
+                                                        technologies designed for modern factories.
+                                                    </p>
+
+                                                    <div class="hero-button-wrap">
+                                                        <a href="#" class="theme-btn gradient-btn">Contact Us</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="hero-wrapper bg_cover"
+                                    style="background-image:url('https://www.centronsys.com/en/web/upload/2025/09/16/17580104856119e0pks.png');">
+
+                                    <div class="container-fluid">
+                                        <div class="row justify-content-center justify-content-xl-start">
+                                            <div class="col-xl-6 col-lg-10">
+
+                                                <div class="hero-content text-center text-xl-start">
+
+                                                    <h1>
+                                                        <span>Smart</span>
+                                                        Industrial Automation
+                                                        <span>Solutions</span>
+                                                    </h1>
+
+                                                    <p>
+                                                        Improve productivity and precision with advanced automation
+                                                        technologies designed for modern factories.
+                                                    </p>
+
+                                                    <div class="hero-button-wrap">
+                                                        <a href="#" class="theme-btn gradient-btn">Contact Us</a>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
+
+                        <!-- arrows -->
+                        <!-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> -->
+
                     </div>
-                </section><!--======  End Hero Section  ======-->
+
+                </section>
+
+                <style>
+                    .hero-slider {
+                        height: 100vh;
+                    }
+
+                    .hero-wrapper {
+                        height: 100vh;
+                        display: flex;
+                        align-items: center;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+
+                    /* Modern Swiper Navigation Buttons */
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                        width: 55px;
+                        height: 55px;
+                        background: #ffffff;
+                        border-radius: 50%;
+                        color: #000000;
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                        transition: all 0.3s ease;
+                    }
+
+                    /* Arrow icon size */
+                    .swiper-button-next::after,
+                    .swiper-button-prev::after {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    /* Hover effect */
+                    .swiper-button-next:hover,
+                    .swiper-button-prev:hover {
+                        background: #a5a6a8;
+                        transform: scale(1.1);
+                    }
+
+                    /* Position */
+                    .swiper-button-prev {
+                        left: 40px;
+                    }
+
+                    .swiper-button-next {
+                        right: 40px;
+                    }
+
+                    /* Mobile responsive */
+                    @media (max-width:768px) {
+
+                        .swiper-button-next,
+                        .swiper-button-prev {
+                            width: 40px;
+                            height: 40px;
+                        }
+
+                        .swiper-button-next::after,
+                        .swiper-button-prev::after {
+                            font-size: 14px;
+                        }
+
+                        .swiper-button-prev {
+                            left: 10px;
+                        }
+
+                        .swiper-button-next {
+                            right: 10px;
+                        }
+
+                    }
+                </style>
+
+                <script>
+                    var swiper = new Swiper(".hero-slider", {
+                        loop: true,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        },
+                        speed: 1000,
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                    });
+                </script>
                 <!--======  Start About Section  ======-->
                 <section class="orbia-we_one pb-120 pt-120">
                     <!-- <div class="shape"><img src="assets/images/home-three/gallery/we-shape1.png" class="animate-float-bob-y" alt="shape"></div> -->
@@ -210,17 +578,10 @@
                                 <!-- Orbia Image Box -->
                                 <div class="orbia-image-box mb-5 mb-xl-0" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="orbia-image">
-                                        <img src="https://www.centronsys.com/en/web/upload/2025/09/08/17572978132889hqly1.png" alt="we image">
+                                        <img src="https://www.centronsys.com/en/web/upload/2025/09/08/17572978132889hqly1.png"
+                                            alt="we image">
                                     </div>
-                                    <!-- <div class="orbia-client-box">
-                                        <div class="thumb">
-                                            <img src="assets/images/home-three/gallery/we-img2.jpg" alt="we image">
-                                        </div>
-                                        <div class="content">
-                                            <h3>435+</h3>
-                                            <h5>Creative Specialist <br> in our team</h5>
-                                        </div>
-                                    </div> -->
+
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-8 col-md-10">
@@ -768,7 +1129,7 @@
                     }
 
                     .mobile-tab.active {
-                        background: #010F34;
+                        background: #D9E1F2;
                         border-color: var(--accent);
                         color: #fff;
                     }
@@ -790,7 +1151,7 @@
                     }
 
                     @media (max-width: 640px) {
-                      
+
 
                         .showcase-layout {
                             grid-template-columns: 1fr;
@@ -855,16 +1216,23 @@
 
 
 
-                <section class="showcase-wrapper">
+                <section class="showcase-wrapper" style="margin-bottom: 100px;">
+
+                    <!-- BRAND TABS -->
+                    <div class="brand-tabs">
+                        <button class="brand-tab active" data-brand="leetx">Leetx</button>
+                        <button class="brand-tab" data-brand="centronsys">Centronsys</button>
+                    </div>
 
                     <!-- Heading -->
                     <div class="section-top">
                         <div class="section-heading">
-                            <div class="section-tag"><span></span> Our Product</div>
+                            <!-- <div class="section-tag"><span></span> Our Product</div> -->
                             <h2>Industrial Automation Products</h2>
                         </div>
                         <p class="section-sub">
-                           Discover our range of high-performance systems designed to deliver precision, consistency.
+                            Discover our range of high-performance systems designed to deliver precision and
+                            consistency.
                         </p>
                     </div>
 
@@ -873,153 +1241,368 @@
 
                     <!-- Layout -->
                     <div class="showcase-layout">
-                        <nav class="product-nav" id="productNav" aria-label="Product categories"></nav>
-                        <div class="product-display" id="productDisplay" role="region" aria-live="polite"></div>
+                        <nav class="product-nav" id="productNav"></nav>
+                        <div class="product-display" id="productDisplay"></div>
                     </div>
 
                 </section>
 
 
+                <style>
+                    /* BRAND TABS */
+
+                    .brand-tabs {
+                        display: flex;
+                        gap: 15px;
+                        justify-content: center;
+                        margin-bottom: 40px;
+                    }
+
+                    .brand-tab {
+                        padding: 10px 25px;
+                        border-radius: 30px;
+                        border: 2px solid #0A2969;
+                        background: white;
+                        color: #0A2969;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+
+                    .brand-tab.active {
+                        background: #010F34;
+                        color: white;
+                    }
+
+                    .brand-tab:hover {
+                        background: #0A2969;
+                        color: white;
+                    }
+
+
+                    /* LAYOUT */
+
+                    .showcase-layout {
+                        display: grid;
+                        grid-template-columns: 320px 1fr;
+                        gap: 40px;
+                    }
+
+                    .product-card {
+                        padding: 18px;
+                        border-radius: 10px;
+                        border: 1px solid #eee;
+                        cursor: pointer;
+                        margin-bottom: 0px;
+                        transition: .3s;
+                    }
+
+                    .product-card.active {
+                        background: #010F34;
+                        color: white;
+                    }
+
+                    .product-display {
+                        position: relative;
+                        min-height: 300px;
+                    }
+
+                    .product-panel {
+                        display: none;
+                    }
+
+                    .product-panel.active {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 40px;
+                        align-items: center;
+                    }
+
+                    .product-image-wrap img {
+                        width: 100%;
+                        border-radius: 10px;
+                        object-fit: contain;
+                    }
+
+                    /* .btn-primary {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        background: #0A2969;
+                        color: white;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        margin-top: 15px;
+                    } */
+
+                    /* MOBILE */
+
+                    @media(max-width:992px) {
+
+                        .showcase-layout {
+                            grid-template-columns: 1fr;
+                        }
+
+                        .product-panel.active {
+                            grid-template-columns: 1fr;
+                        }
+
+                        .product-nav {
+                            display: none;
+                        }
+
+                        .mobile-tabs {
+                            display: flex;
+                            gap: 10px;
+                            overflow: auto;
+                            margin-bottom: 20px;
+                        }
+
+                        .mobile-tab {
+                            padding: 8px 18px;
+                            border-radius: 20px;
+                            border: 1px solid #0A2969;
+                            background: white;
+                            color: #0A2969;
+                            cursor: pointer;
+                        }
+
+                        .mobile-tab.active {
+                            background: #0A2969;
+                            color: white;
+                        }
+
+                    }
+                </style>
 
 
                 <script>
-                    const products = [
-                        {
-                            id: 'transducerized',
-                            name: 'Transducerized Screw',
 
-                            title: 'Transducerized Screw Systems',
-                            desc: 'Tightening tools can achieve multiple tightening control strategies such as torque, angle, seating point (seating), and torque slope, ensuring high-quality and high-efficiency assembly.',
-                            image: 'https://www.leetx.com/en/web/upload/2024/07/24/17217937738677c6vfo.png',
-                            specs: [],
-                        },
+                    const productData = {
 
-                        {
-                            id: 'servo-feeding',
-                            name: 'Screw Feeding System',
+                        leetx: [
 
-                            title: 'Servo Press Systems',
-                            desc: 'Automatic Screw Feeding System is designed to meet demanding requirements for high-speed operation (up to 1.5 seconds per screw), exceptional reliability (jamming rate below 0.01%),',
-                            image: 'https://www.leetx.com/en/web/upload/2024/07/08/1720408120458991q81.png',
-                            specs: [],
-                        },
+                            {
+                                id: 'transducerized',
+                                name: 'Transducerized Tightening System',
+                                title: 'Transducerized Screw Systems',
+                                desc: 'Tightening tools can achieve multiple tightening control strategies such as torque, angle and seating point ensuring high quality assembly.',
+                                image: 'https://www.leetx.com/en/web/upload/2024/07/24/17217937738677c6vfo.png'
+                            },
+
+                            {
+                                id: 'Automatic-Screw-Feeding-System',
+                                name: 'Automatic Screw Feeding System',
+                                title: 'Automatic Screw Feeding System',
+                                desc: 'Automatic Screw Feeding System meets the most demanding requirements for high-speed operation (1.5s/screw), exceptional reliability (jamming rate below 0.01%)',
+                                image: 'https://www.leetx.com/en/web/upload/2024/07/24/17217937863513gtgyh.png'
+                            },
+
+                            {
+                                id: 'Servo-Press-System',
+                                name: 'Servo Press System',
+                                title: 'Servo Press System',
+                                desc: 'Servo Press System is characterized by its high precision, high speed, compact design, high reliability, maintenance-free operation, and diverse model range. ',
+                                image: 'https://www.leetx.com/en/web/upload/2024/07/24/17217938006279rapoq.png'
+                            },
+                            {
+                                id: 'Smart-Integrated',
+                                name: 'Smart Integrated Assembly Analysis',
+                                title: 'Smart Integrated Assembly Analysis',
+                                desc: 'SmartIntegrated Assembly Analysis System will enable comprehensive production control, reducing rework rate, enhancing work quality, and maximizing uptime.',
+                                image: 'https://www.leetx.com/en/web/upload/2024/07/24/17217938099573x6o6w.png'
+                            }
+
+                        ],
+
+                        centronsys: [
+
+                            {
+                                id: 'Feeding System',
+                                name: 'Feeding System',
+                                title: 'Feeding System',
+                                desc: 'Centron barrel supply system and pumps deliver medium to high viscosityfluid directly from original packaging barrel to transfer station or meteringsystem to avoid the risks associated with secondary packaging or transferring.',
+                                image: 'https://www.centronsys.com/en/web/upload/2025/09/08/17572994453611gfld0.png'
+                            },
+
+                            {
+                                id: ' Metering System',
+                                name: 'Metering System',
+                                title: 'Metering System',
+                                desc: 'Puflo uses piston metering principle, advanced flow design andhigh precision metering. lt applies to various materials and meetdifferent market demands.',
+                                image: 'https://www.centronsys.com/en/web/upload/2024/10/25/17298362803489h4um2.png'
+                            },
+
+                            {
+                                id: ' Dispensing Module',
+                                name: 'Dispensing Module',
+                                title: 'Dispensing Module',
+                                desc: 'Centron dispensing module offers reliable, durable and diferent seal type to meet diferent requlrements of dispensing applications.',
+                                image: 'https://www.centronsys.com/en/web/upload/2025/09/08/17572994588905qrjnh.png'
+                            },
+
+                            {
+                                id: ' Transfer System',
+                                name: 'Transfer System',
+                                title: 'Transfer System',
+                                desc: 'Centron transfer system provides material pretreatment in order to deliverymore stable material, enhance metering system stability and enable con-venient replacement of material barrels, without disrupting production.',
+                                image: 'https://www.centronsys.com/en/web/upload/2024/10/25/172982898633330lytd.png'
+                            },
+
+                            {
+                                id: ' Annex',
+                                name: 'Annex',
+                                title: 'Annex',
+                                desc: 'Pressure regulator is to adjust optimal working pressure of materlal from pump and make fluld smooth flow.',
+                                image: 'https://www.centronsys.com/en/web/upload/2025/09/08/175729947129836hqgn.png'
+                            },
+
+                            {
+                                id: 'Glue coating system application',
+                                name: 'Glue coating system application',
+                                title: 'Glue coating system application',
+                                desc: 'Pressure regulator is to adjust optimal working pressure of materlal from pump and make fluld smooth flow.',
+                                image: 'https://www.centronsys.com/en/web/upload/2025/10/13/17603501913169i0fw6.png'
+                            }
+                        ]
+
+                    };
 
 
-                        {
-                            id: 'servo-press',
-                            name: 'Servo Press Systems',
+                    const nav = document.getElementById("productNav");
+                    const display = document.getElementById("productDisplay");
+                    const tabs = document.getElementById("mobileTabs");
 
-                            title: 'Servo Press Systems',
-                            desc: 'Closed-loop servo-driven press solutions delivering real-time force–displacement monitoring. Perfect for clinching, staking, and press-fit assembly with full traceability and process control.',
-                            image: 'https://www.leetx.com/en/web/upload/2024/07/24/17217938006279rapoq.png',
-                            specs: [],
-                        },
-                       
-                        {
-                            id: 'glue-dispensing',
-                            name: 'Glue & Adhesive Dispensing',
-
-                            title: 'Glue & Adhesive Dispensing Systems',
-                            desc: 'Glue & Adhesive Dispensing Systems are designed to deliver precise, consistent, and controlled application of adhesives, sealants, and bonding materials in modern manufacturing processes.',
-                            image: 'https://mahisa.com/wp-content/uploads/2023/09/Glue-dispenser-banner.webp',
-                            specs: [],
-                        },
-                    ];
-
-                    const nav = document.getElementById('productNav');
-                    const display = document.getElementById('productDisplay');
-                    const tabsEl = document.getElementById('mobileTabs');
+                    let currentBrand = "leetx";
+                    let products = productData[currentBrand];
                     let activeId = products[0].id;
 
-                    const arrowSVG = `<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>`;
+
+                    /* BUILD NAV */
 
                     function buildNav() {
-                        products.forEach((p, i) => {
-                            const card = document.createElement('div');
-                            card.className = 'product-card' + (p.id === activeId ? ' active' : '');
-                            card.setAttribute('role', 'button');
-                            card.setAttribute('tabindex', '0');
-                            card.dataset.id = p.id;
-                            card.innerHTML = `
-        <div class="card-left">
-        
-          <span class="card-name">${p.name}</span>
-        </div>
-        <div class="card-dot">${arrowSVG}</div>
-      `;
-                            card.addEventListener('click', () => activate(p.id));
-                            card.addEventListener('keydown', e => e.key === 'Enter' && activate(p.id));
+
+                        nav.innerHTML = "";
+                        tabs.innerHTML = "";
+
+                        products.forEach(p => {
+
+                            const card = document.createElement("div");
+
+                            card.className = "product-card" + (p.id === activeId ? " active" : "");
+
+                            card.innerHTML = `${p.name}`;
+
+                            card.onclick = () => activate(p.id);
+
                             nav.appendChild(card);
 
-                            const tab = document.createElement('button');
-                            tab.className = 'mobile-tab' + (p.id === activeId ? ' active' : '');
-                            tab.textContent = p.name;
-                            tab.dataset.id = p.id;
-                            tab.addEventListener('click', () => activate(p.id));
-                            tabsEl.appendChild(tab);
+
+                            /* MOBILE TAB */
+
+                            const tab = document.createElement("button");
+
+                            tab.className = "mobile-tab" + (p.id === activeId ? " active" : "");
+
+                            tab.innerText = p.name;
+
+                            tab.onclick = () => activate(p.id);
+
+                            tabs.appendChild(tab);
+
                         });
+
                     }
+
+
+                    /* BUILD PANELS */
 
                     function buildPanels() {
+
+                        display.innerHTML = "";
+
                         products.forEach(p => {
-                            const panel = document.createElement('div');
-                            panel.className = 'product-panel' + (p.id === activeId ? ' active' : '');
+
+                            const panel = document.createElement("div");
+
+                            panel.className = "product-panel" + (p.id === activeId ? " active" : "");
+
                             panel.dataset.id = p.id;
 
-                            const specsHTML = p.specs.map(s => `
-        <div class="spec-item">
-          <span class="spec-label">${s.label}</span>
-          <span class="spec-value">${s.value}</span>
-        </div>
-      `).join('');
-
                             panel.innerHTML = `
-        <div class="product-image-wrap">
-        
-          <img src="${p.image}" alt="${p.title}" loading="lazy"/>
-        </div>
-        <div class="product-content">
-          <h3>${p.title}</h3>
-          <p>${p.desc}</p>
-          <div class="product-specs">${specsHTML}</div>
-          <div class="product-cta">
-            <a href="#" class="btn-primary" style="background:#010F34">Learn More ${arrowSVG}</a>
-           
-          </div>
-        </div>
-      `;
+
+<div class="product-image-wrap">
+
+<img src="${p.image}" alt="${p.title}">
+
+</div>
+
+<div class="product-content">
+
+<h3>${p.title}</h3>
+
+<p>${p.desc}</p>
+
+<a href="#" class="btn-primary">Learn More</a>
+
+</div>
+
+`;
+
                             display.appendChild(panel);
+
                         });
+
                     }
+
+
+                    /* ACTIVATE */
 
                     function activate(id) {
-                        if (id === activeId) return;
-
-                        document.querySelectorAll('.product-card').forEach(c => c.classList.toggle('active', c.dataset.id === id));
-                        document.querySelectorAll('.mobile-tab').forEach(t => t.classList.toggle('active', t.dataset.id === id));
-
-                        const oldPanel = display.querySelector('.product-panel.active');
-                        if (oldPanel) {
-                            oldPanel.style.opacity = '0';
-                            oldPanel.style.transform = 'translateY(-10px)';
-                            oldPanel.style.pointerEvents = 'none';
-                            setTimeout(() => {
-                                oldPanel.classList.remove('active');
-                                oldPanel.style.opacity = '';
-                                oldPanel.style.transform = '';
-                            }, 200);
-                        }
-
-                        setTimeout(() => {
-                            const newPanel = display.querySelector(`.product-panel[data-id="${id}"]`);
-                            if (newPanel) newPanel.classList.add('active');
-                        }, 220);
 
                         activeId = id;
+
+                        document.querySelectorAll(".product-card").forEach(c => {
+                            c.classList.toggle("active", c.innerText === products.find(p => p.id === id).name)
+                        });
+
+                        document.querySelectorAll(".mobile-tab").forEach(c => {
+                            c.classList.toggle("active", c.innerText === products.find(p => p.id === id).name)
+                        });
+
+                        document.querySelectorAll(".product-panel").forEach(p => {
+                            p.classList.toggle("active", p.dataset.id === id)
+                        });
+
                     }
+
+
+                    /* BRAND SWITCH */
+
+                    document.querySelectorAll(".brand-tab").forEach(btn => {
+
+                        btn.addEventListener("click", () => {
+
+                            document.querySelectorAll(".brand-tab").forEach(b => b.classList.remove("active"));
+
+                            btn.classList.add("active");
+
+                            currentBrand = btn.dataset.brand;
+
+                            products = productData[currentBrand];
+
+                            activeId = products[0].id;
+
+                            buildNav();
+                            buildPanels();
+
+                        });
+
+                    });
+
 
                     buildNav();
                     buildPanels();
+
                 </script>
 
 
@@ -1330,7 +1913,7 @@
                         white-space: nowrap;
                     }
 
-                    .btn-primary {
+                    /* .btn-primary {
                         background: linear-gradient(135deg, var(--blue) 0%, var(--blue-lt) 100%);
                         color: #fff;
                         box-shadow: 0 4px 20px rgba(37, 99, 235, 0.48);
@@ -1339,7 +1922,7 @@
                     .btn-primary:hover {
                         transform: translateY(-2px);
                         box-shadow: 0 8px 28px rgba(37, 99, 235, 0.62);
-                    }
+                    } */
 
                     .btn-secondary {
                         background: rgba(255, 255, 255, 0.08);
@@ -1575,354 +2158,343 @@
 
 
 
-               
-                    <section id="industry">
 
-                        <div id="bgContainer"></div>
-                        <div class="bg-overlay"></div>
+                <!-- <section id="industry">
 
-                        <div class="section-inner">
-                            <!-- <div class="section-badge">
-      <div class="badge-dot"></div>
-      <span class="badge-text">Industry Applications</span>
-    </div> -->
+                    <div id="bgContainer"></div>
+                    <div class="bg-overlay"></div>
 
-                            <div class="hero-columns">
-                                <!-- LEFT -->
-                                <div class="hero-left">
-                                    <div class="industry-eyebrow" id="eyebrow">Body-in-White Systems</div>
-                                    <h1 class="industry-title" id="industryTitle">Automotive<br>Body Welding</h1>
-                                    <div class="title-rule">
-                                        <div class="rule-line"></div>
-                                        <span class="rule-tag">Industrial Automation</span>
-                                    </div>
-                                </div>
+                    <div class="section-inner">
 
-                                <!-- RIGHT -->
-                                <div class="hero-right">
-                                    <p class="industry-desc" id="industryDesc">
-                                        Precision robotic welding systems engineered for high-throughput automotive body
-                                        assembly. Our solutions deliver sub-millimeter accuracy with adaptive seam
-                                        tracking across complex body-in-white structures.
-                                    </p>
 
-                                    <div class="stat-row">
-                                        <div class="stat-item">
-                                            <span class="stat-num" id="stat1">±0.05mm</span>
-                                            <span class="stat-label">Repeatability</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-num" id="stat2">3,200/day</span>
-                                            <span class="stat-label">Throughput</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-num" id="stat3">99.7%</span>
-                                            <span class="stat-label">Uptime</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- <div class="btn-group">
-          <button class="btn btn-primary">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
-            Explore More
-          </button>
-          <button class="btn btn-secondary">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            View Application Data
-          </button>
-        </div> -->
+                        <div class="hero-columns">
+                          
+                            <div class="hero-left">
+                                <div class="industry-eyebrow" id="eyebrow">Body-in-White Systems</div>
+                                <h1 class="industry-title" id="industryTitle">Automotive<br>Body Welding</h1>
+                                <div class="title-rule">
+                                    <div class="rule-line"></div>
+                                    <span class="rule-tag">Industrial Automation</span>
                                 </div>
                             </div>
+
+                           
+                            <div class="hero-right">
+                                <p class="industry-desc" id="industryDesc">
+                                    Precision robotic welding systems engineered for high-throughput automotive body
+                                    assembly. Our solutions deliver sub-millimeter accuracy with adaptive seam
+                                    tracking across complex body-in-white structures.
+                                </p>
+
+                                <div class="stat-row">
+                                    <div class="stat-item">
+                                        <span class="stat-num" id="stat1">±0.05mm</span>
+                                        <span class="stat-label">Repeatability</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-num" id="stat2">3,200/day</span>
+                                        <span class="stat-label">Throughput</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-num" id="stat3">99.7%</span>
+                                        <span class="stat-label">Uptime</span>
+                                    </div>
+                                </div>
+
+                               
+                            </div>
                         </div>
+                    </div>
 
-                        <!-- Cards -->
-                        <div class="cards-wrapper">
-                            <div class="cards-row" id="cardsRow"></div>
-                        </div>
+                   
+                    <div class="cards-wrapper">
+                        <div class="cards-row" id="cardsRow"></div>
+                    </div>
 
-                    </section>
+                </section> -->
 
-                    <script>
-                        const industries = [
-                            {
-                                id: 'welding',
-                                label: 'Automotive body welding',
-                                title: 'Automotive<br>Body Welding',
-                                eyebrow: 'Body-in-White Systems',
-                                desc: 'Automotive body welding is one of the core processes in modern automotive manufacturing, ensuring that the overall structure meets the design requirements for strength, stiffness, and safety. The quality of the welding process not only guarantees vehicle safety but also significantly affects the NVH (Noise, Vibration, and Harshness) performance and overall product quality.',
-                                stats: ['±0.05mm', '3,200/day', '99.7%'],
-                                statLabels: ['Repeatability', 'Throughput', 'Uptime'],
-                                bg: 'https://www.centronsys.com/en/web/upload/2025/09/08/17572966335768guimj.png',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
-                            },
-                            {
-                                id: 'Electric Drive',
-                                label: 'Electric Drive',
-                                title: 'Electric Drive',
-                                eyebrow: 'End-of-Line Automation',
-                                desc: 'During the manufacturing and integration of electric drive systems in new energy vehicles (such as motors, electronic control units, and battery management systems), adhesive dispensing application serves as a critical method for encapsulation, bonding, sealing, and thermal management.',
-                                stats: ['1,800/shift', '< 8s', '6-axis'],
-                                statLabels: ['Units Output', 'Cycle Time', 'Robot DoF'],
-                                bg: 'https://www.centronsys.com/en/web/upload/2024/10/25/17298438672538hbz3h.jpg',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`
-                            },
-                            {
-                                id: 'Photovoltaic Energy Storage',
-                                label: 'Photovoltaic Energy Storage',
-                                title: 'Photovoltaic Energy Storage',
-                                eyebrow: 'EV Powertrain',
-                                desc: 'Photovoltaic energy storage systems are long-term exposed to outdoor environments, enduring complex climatic conditions such as high temperatures, ultraviolet radiation, and sand erosion',
-                                stats: ['< 2μm', '100% EOL', 'IP67'],
-                                statLabels: ['Coil Tolerance', 'Test Coverage', 'Sealing Class'],
-                                bg: 'https://www.centronsys.com/en/web/upload/2024/10/25/17298448072514aaelj.jpg',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>`
-                            },
-                            {
-                                id: 'electronics',
-                                label: 'Automotive\nElectronics',
-                                title: 'Automotive<br>Electronics',
-                                eyebrow: 'PCB & ECU Manufacturing',
-                                desc: 'During the manufacturing and encapsulation of automotive electronic systems, adhesive dispensing application serves as a critical method for encapsulation, bonding, sealing, and thermal management, directly influencing the performance stability',
-                                stats: ['IPC-A-610E', '3D AOI', '0201'],
-                                statLabels: ['Quality Std', 'Inspection', 'Min. Component'],
-                                bg: 'https://www.centronsys.com/en/web/upload/2024/10/25/172984410268892fqmv.jpg',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`
-                            },
-                            {
-                                id: 'Body Sheet Metal Parts',
-                                label: 'Body Sheet\nMetal Parts',
-                                title: 'Body Sheet<br>Metal Parts',
-                                eyebrow: 'Stamping & Forming',
-                                desc: 'The adhesive dispensing application process for body sheet metal parts plays a critical role in enhancing structural strength, sealing protection, corrosion and rust prevention',
-                                stats: ['800 t', '±0.1mm', '40+'],
-                                statLabels: ['Press Force', 'Part Tolerance', 'Die Families'],
-                                bg: 'https://www.centronsys.com/en/web/upload/2025/09/08/17572977972702la67e.png',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/></svg>`
-                            },
+                <script>
+                    const industries = [
+                        {
+                            id: 'welding',
+                            label: 'Automotive body welding',
+                            title: 'Automotive<br>Body Welding',
+                            eyebrow: 'Body-in-White Systems',
+                            desc: 'Automotive body welding is one of the core processes in modern automotive manufacturing, ensuring that the overall structure meets the design requirements for strength, stiffness, and safety. The quality of the welding process not only guarantees vehicle safety but also significantly affects the NVH (Noise, Vibration, and Harshness) performance and overall product quality.',
+                            stats: ['±0.05mm', '3,200/day', '99.7%'],
+                            statLabels: ['Repeatability', 'Throughput', 'Uptime'],
+                            bg: 'https://www.centronsys.com/en/web/upload/2025/09/08/17572966335768guimj.png',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+                        },
+                        {
+                            id: 'Electric Drive',
+                            label: 'Electric Drive',
+                            title: 'Electric Drive',
+                            eyebrow: 'End-of-Line Automation',
+                            desc: 'During the manufacturing and integration of electric drive systems in new energy vehicles (such as motors, electronic control units, and battery management systems), adhesive dispensing application serves as a critical method for encapsulation, bonding, sealing, and thermal management.',
+                            stats: ['1,800/shift', '< 8s', '6-axis'],
+                            statLabels: ['Units Output', 'Cycle Time', 'Robot DoF'],
+                            bg: 'https://www.centronsys.com/en/web/upload/2024/10/25/17298438672538hbz3h.jpg',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`
+                        },
+                        {
+                            id: 'Photovoltaic Energy Storage',
+                            label: 'Photovoltaic Energy Storage',
+                            title: 'Photovoltaic Energy Storage',
+                            eyebrow: 'EV Powertrain',
+                            desc: 'Photovoltaic energy storage systems are long-term exposed to outdoor environments, enduring complex climatic conditions such as high temperatures, ultraviolet radiation, and sand erosion',
+                            stats: ['< 2μm', '100% EOL', 'IP67'],
+                            statLabels: ['Coil Tolerance', 'Test Coverage', 'Sealing Class'],
+                            bg: 'https://www.centronsys.com/en/web/upload/2024/10/25/17298448072514aaelj.jpg',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>`
+                        },
+                        {
+                            id: 'electronics',
+                            label: 'Automotive\nElectronics',
+                            title: 'Automotive<br>Electronics',
+                            eyebrow: 'PCB & ECU Manufacturing',
+                            desc: 'During the manufacturing and encapsulation of automotive electronic systems, adhesive dispensing application serves as a critical method for encapsulation, bonding, sealing, and thermal management, directly influencing the performance stability',
+                            stats: ['IPC-A-610E', '3D AOI', '0201'],
+                            statLabels: ['Quality Std', 'Inspection', 'Min. Component'],
+                            bg: 'https://www.centronsys.com/en/web/upload/2024/10/25/172984410268892fqmv.jpg',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`
+                        },
+                        {
+                            id: 'Body Sheet Metal Parts',
+                            label: 'Body Sheet\nMetal Parts',
+                            title: 'Body Sheet<br>Metal Parts',
+                            eyebrow: 'Stamping & Forming',
+                            desc: 'The adhesive dispensing application process for body sheet metal parts plays a critical role in enhancing structural strength, sealing protection, corrosion and rust prevention',
+                            stats: ['800 t', '±0.1mm', '40+'],
+                            statLabels: ['Press Force', 'Part Tolerance', 'Die Families'],
+                            bg: 'https://www.centronsys.com/en/web/upload/2025/09/08/17572977972702la67e.png',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/></svg>`
+                        },
 
-                            {
-                                id: 'Powertrain',
-                                label: 'Powertrain',
-                                title: 'Powertrain',
-                                eyebrow: 'Human-Robot Collaboration',
-                                desc: 'The adhesive dispensing application process for the powertrain (including core components such as the engine and transmission) is a critical technical step in ensuring system sealing',
-                                stats: ['< 5N', '±0.03mm', 'ISO 10218'],
-                                statLabels: ['Contact Force', 'Insert Accuracy', 'Safety Std'],
-                                bg: 'https://www.centronsys.com/en/web/upload/2025/09/08/1757298534861549zms.png',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>`
-                            },
-                            {
-                                id: 'Lithium Battery',
-                                label: 'Lithium Battery',
-                                title: 'Lithium Battery',
-                                eyebrow: 'Engine & Transmission',
-                                desc: 'Fully automated assembly and test systems for ICE engines, dual-clutch transmissions, and hybrid modules. Traceability-driven assembly with hot and cold EOL testing ensures zero-escape quality.',
-                                stats: ['< 30s', 'NVH + Leak', 'Full SPC'],
-                                statLabels: ['Cycle Time', 'Test Methods', 'Process Control'],
-                                bg: 'https://www.centronsys.com/en/web/upload/2024/10/26/17299258424634vvdm2.jpg',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>`
-                            },
-                            {
-                                id: 'photovoltaic',
-                                label: 'Photovoltaic\nEnergy',
-                                title: 'Photovoltaic<br>Energy Storage',
-                                eyebrow: 'Solar & ESS Manufacturing',
-                                desc: 'Tabbing-stringing lines and module lamination systems for high-efficiency solar panels. Integrated ESS pack assembly links PV production with battery storage for turnkey renewable energy solutions.',
-                                stats: ['< 0.2s', 'EL + IV', '1 GW/yr'],
-                                statLabels: ['String Cycle', 'Cell Testing', 'Capacity'],
-                                bg: 'https://thumbs.dreamstime.com/b/close-up-car-headlamps-headlights-row-ready-assembly-to-automotive-industry-concept-178907882.jpg',
-                                icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`
-                            }
-                        ];
+                        {
+                            id: 'Powertrain',
+                            label: 'Powertrain',
+                            title: 'Powertrain',
+                            eyebrow: 'Human-Robot Collaboration',
+                            desc: 'The adhesive dispensing application process for the powertrain (including core components such as the engine and transmission) is a critical technical step in ensuring system sealing',
+                            stats: ['< 5N', '±0.03mm', 'ISO 10218'],
+                            statLabels: ['Contact Force', 'Insert Accuracy', 'Safety Std'],
+                            bg: 'https://www.centronsys.com/en/web/upload/2025/09/08/1757298534861549zms.png',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>`
+                        },
+                        {
+                            id: 'Lithium Battery',
+                            label: 'Lithium Battery',
+                            title: 'Lithium Battery',
+                            eyebrow: 'Engine & Transmission',
+                            desc: 'Fully automated assembly and test systems for ICE engines, dual-clutch transmissions, and hybrid modules. Traceability-driven assembly with hot and cold EOL testing ensures zero-escape quality.',
+                            stats: ['< 30s', 'NVH + Leak', 'Full SPC'],
+                            statLabels: ['Cycle Time', 'Test Methods', 'Process Control'],
+                            bg: 'https://www.centronsys.com/en/web/upload/2024/10/26/17299258424634vvdm2.jpg',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>`
+                        },
+                        {
+                            id: 'photovoltaic',
+                            label: 'Photovoltaic\nEnergy',
+                            title: 'Photovoltaic<br>Energy Storage',
+                            eyebrow: 'Solar & ESS Manufacturing',
+                            desc: 'Tabbing-stringing lines and module lamination systems for high-efficiency solar panels. Integrated ESS pack assembly links PV production with battery storage for turnkey renewable energy solutions.',
+                            stats: ['< 0.2s', 'EL + IV', '1 GW/yr'],
+                            statLabels: ['String Cycle', 'Cell Testing', 'Capacity'],
+                            bg: 'https://thumbs.dreamstime.com/b/close-up-car-headlamps-headlights-row-ready-assembly-to-automotive-industry-concept-178907882.jpg',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`
+                        }
+                    ];
 
-                        /* ── Backgrounds ── */
-                        const bgContainer = document.getElementById('bgContainer');
-                        industries.forEach((ind, i) => {
-                            const div = document.createElement('div');
-                            div.className = 'bg-layer ' + (i === 0 ? 'visible' : 'hidden');
-                            div.id = 'bg-' + ind.id;
-                            div.style.backgroundImage = `url(${ind.bg})`;
-                            bgContainer.appendChild(div);
-                        });
+                    /* ── Backgrounds ── */
+                    const bgContainer = document.getElementById('bgContainer');
+                    industries.forEach((ind, i) => {
+                        const div = document.createElement('div');
+                        div.className = 'bg-layer ' + (i === 0 ? 'visible' : 'hidden');
+                        div.id = 'bg-' + ind.id;
+                        div.style.backgroundImage = `url(${ind.bg})`;
+                        bgContainer.appendChild(div);
+                    });
 
-                        /* ── Cards ── */
-                        const cardsRow = document.getElementById('cardsRow');
-                        industries.forEach((ind, i) => {
-                            const card = document.createElement('div');
-                            card.className = 'industry-card' + (i === 0 ? ' active' : '');
-                            card.dataset.id = ind.id;
-                            card.innerHTML = `
+                    /* ── Cards ── */
+                    const cardsRow = document.getElementById('cardsRow');
+                    industries.forEach((ind, i) => {
+                        const card = document.createElement('div');
+                        card.className = 'industry-card' + (i === 0 ? ' active' : '');
+                        card.dataset.id = ind.id;
+                        card.innerHTML = `
     <div class="card-icon">${ind.icon}</div>
     <div class="card-label">${ind.label.replace('\n', '<br>')}</div>
   `;
-                            card.addEventListener('click', () => setActive(ind.id));
-                            card.addEventListener('mouseenter', () => setActive(ind.id));
-                            cardsRow.appendChild(card);
+                        card.addEventListener('click', () => setActive(ind.id));
+                        card.addEventListener('mouseenter', () => setActive(ind.id));
+                        cardsRow.appendChild(card);
+                    });
+
+                    /* ── Interaction ── */
+                    let currentId = industries[0].id;
+                    let animTimer = null;
+                    let autoCycleIdx = 0;
+                    let autoCycleTimer = null;
+
+                    function setActive(id) {
+                        if (id === currentId) return;
+                        currentId = id;
+                        const ind = industries.find(x => x.id === id);
+
+                        document.querySelectorAll('.bg-layer').forEach(el => {
+                            el.className = 'bg-layer ' + (el.id === 'bg-' + id ? 'visible' : 'hidden');
+                        });
+                        document.querySelectorAll('.industry-card').forEach(el => {
+                            el.classList.toggle('active', el.dataset.id === id);
                         });
 
-                        /* ── Interaction ── */
-                        let currentId = industries[0].id;
-                        let animTimer = null;
-                        let autoCycleIdx = 0;
-                        let autoCycleTimer = null;
+                        const titleEl = document.getElementById('industryTitle');
+                        const descEl = document.getElementById('industryDesc');
+                        titleEl.classList.add('changing');
+                        descEl.classList.add('changing');
 
-                        function setActive(id) {
-                            if (id === currentId) return;
-                            currentId = id;
-                            const ind = industries.find(x => x.id === id);
+                        clearTimeout(animTimer);
+                        animTimer = setTimeout(() => {
+                            document.getElementById('eyebrow').textContent = ind.eyebrow;
+                            titleEl.innerHTML = ind.title;
+                            descEl.textContent = ind.desc;
+                            document.getElementById('stat1').textContent = ind.stats[0];
+                            document.getElementById('stat2').textContent = ind.stats[1];
+                            document.getElementById('stat3').textContent = ind.stats[2];
+                            document.querySelectorAll('.stat-label').forEach((el, i) => el.textContent = ind.statLabels[i]);
+                            titleEl.classList.remove('changing');
+                            descEl.classList.remove('changing');
+                        }, 270);
+                    }
 
-                            document.querySelectorAll('.bg-layer').forEach(el => {
-                                el.className = 'bg-layer ' + (el.id === 'bg-' + id ? 'visible' : 'hidden');
-                            });
-                            document.querySelectorAll('.industry-card').forEach(el => {
-                                el.classList.toggle('active', el.dataset.id === id);
-                            });
+                    function startAutoCycle() {
+                        clearInterval(autoCycleTimer);
+                        autoCycleTimer = setInterval(() => {
+                            autoCycleIdx = (autoCycleIdx + 1) % industries.length;
+                            setActive(industries[autoCycleIdx].id);
+                        }, 4800);
+                    }
 
-                            const titleEl = document.getElementById('industryTitle');
-                            const descEl = document.getElementById('industryDesc');
-                            titleEl.classList.add('changing');
-                            descEl.classList.add('changing');
+                    const section = document.getElementById('industry');
+                    section.addEventListener('mouseenter', () => clearInterval(autoCycleTimer));
+                    section.addEventListener('mouseleave', startAutoCycle);
 
-                            clearTimeout(animTimer);
-                            animTimer = setTimeout(() => {
-                                document.getElementById('eyebrow').textContent = ind.eyebrow;
-                                titleEl.innerHTML = ind.title;
-                                descEl.textContent = ind.desc;
-                                document.getElementById('stat1').textContent = ind.stats[0];
-                                document.getElementById('stat2').textContent = ind.stats[1];
-                                document.getElementById('stat3').textContent = ind.stats[2];
-                                document.querySelectorAll('.stat-label').forEach((el, i) => el.textContent = ind.statLabels[i]);
-                                titleEl.classList.remove('changing');
-                                descEl.classList.remove('changing');
-                            }, 270);
-                        }
-
-                        function startAutoCycle() {
-                            clearInterval(autoCycleTimer);
-                            autoCycleTimer = setInterval(() => {
-                                autoCycleIdx = (autoCycleIdx + 1) % industries.length;
-                                setActive(industries[autoCycleIdx].id);
-                            }, 4800);
-                        }
-
-                        const section = document.getElementById('industry');
-                        section.addEventListener('mouseenter', () => clearInterval(autoCycleTimer));
-                        section.addEventListener('mouseleave', startAutoCycle);
-
-                        startAutoCycle();
-                    </script>
+                    startAutoCycle();
+                </script>
 
 
 
-                    <section class="orbia-work-sec pt-115 pb-120">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center">
-                                <div class="col-xl-7 col-lg-9">
-                                    <!-- Orbia Content Box -->
-                                    <div class="orbia-content-box">
-                                        <!-- Section Title -->
-                                        <div class="section-title mb-40">
-                                            <!-- <span class="sub-title" data-aos="fade-down" data-aos-duration="1000">How It Works</span> -->
-                                            <h2 class="text-anm">Why Choose Lextron Join Tech</h2>
-                                        </div>
-                                        <!-- Item List -->
-                                        <div class="content-item-list">
-                                            <!-- Orbiia Content Item -->
-                                            <div class="orbia-content-item style-three mb-30" data-aos="fade-up"
-                                                data-aos-duration="1000">
-                                                <div class="sn-number">
-                                                    01.
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Advanced Technology Solutions</h4>
-                                                    <p>We provide cutting-edge joining and automation technologies
-                                                        designed to meet modern manufacturing standards</p>
-                                                </div>
-                                            </div>
-                                            <!-- Orbiia Content Item -->
-                                            <div class="orbia-content-item style-three mb-30" data-aos="fade-up"
-                                                data-aos-duration="1200">
-                                                <div class="sn-number">
-                                                    02.
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"> Strong Engineering & Application Support</h4>
-                                                    <p>Our experienced technical team works closely with customers to
-                                                        understand their application requirements and deliver practical,
-                                                        efficient, and well-engineered solutions for real production
-                                                        challenges.</p>
-                                                </div>
-                                            </div>
-                                            <!-- Orbiia Content Item -->
-                                            <div class="orbia-content-item style-three mb-30" data-aos="fade-up"
-                                                data-aos-duration="1400">
-                                                <div class="sn-number">
-                                                    03.
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title">Customized Industrial Solutions</h4>
-                                                    <p>Every manufacturing process is different. We provide tailored
-                                                        solutions designed specifically for customer production lines,
-                                                        helping industries achieve better efficiency, quality, and
-                                                        automation.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                <section class="orbia-work-sec  pb-120" style="padding-top: 60px;">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-7 col-lg-9">
+                                <!-- Orbia Content Box -->
+                                <div class="orbia-content-box">
+                                    <!-- Section Title -->
+                                    <div class="section-title mb-40">
+                                        <!-- <span class="sub-title" data-aos="fade-down" data-aos-duration="1000">How It Works</span> -->
+                                        <h2 class="text-anm">Why Choose Lextron Join Tech</h2>
                                     </div>
-                                </div>
-                                <div class="col-xl-5 col-lg-9">
-                                    <!-- Orbia Image -->
-                                    <div class="orbia-image mb-30" data-aos="fade-up" data-aos-duration="1000">
-                                        <img src="./assets/17580104561122vtmmy.png" alt="work image">
+                                    <!-- Item List -->
+                                    <div class="content-item-list">
+                                        <!-- Orbiia Content Item -->
+                                        <div class="orbia-content-item style-three mb-30" data-aos="fade-up"
+                                            data-aos-duration="1000">
+                                            <div class="sn-number">
+                                                01.
+                                            </div>
+                                            <div class="content">
+                                                <h4 class="title">Advanced Technology Solutions</h4>
+                                                <p>We provide cutting-edge joining and automation technologies
+                                                    designed to meet modern manufacturing standards</p>
+                                            </div>
+                                        </div>
+                                        <!-- Orbiia Content Item -->
+                                        <div class="orbia-content-item style-three mb-30" data-aos="fade-up"
+                                            data-aos-duration="1200">
+                                            <div class="sn-number">
+                                                02.
+                                            </div>
+                                            <div class="content">
+                                                <h4 class="title"> Strong Engineering & Application Support</h4>
+                                                <p>Our experienced technical team works closely with customers to
+                                                    understand their application requirements and deliver practical,
+                                                    efficient, and well-engineered solutions for real production
+                                                    challenges.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Orbiia Content Item -->
+                                        <div class="orbia-content-item style-three mb-30" data-aos="fade-up"
+                                            data-aos-duration="1400">
+                                            <div class="sn-number">
+                                                03.
+                                            </div>
+                                            <div class="content">
+                                                <h4 class="title">Customized Industrial Solutions</h4>
+                                                <p>Every manufacturing process is different. We provide tailored
+                                                    solutions designed specifically for customer production lines,
+                                                    helping industries achieve better efficiency, quality, and
+                                                    automation.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xl-5 col-lg-9">
+                                <!-- Orbia Image -->
+                                <div class="orbia-image mb-30" data-aos="fade-up" data-aos-duration="1000">
+                                    <img src="./assets/17580104561122vtmmy.png" alt="work image">
+                                </div>
+                            </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
 
-                    <!--====== Start Animated Text ======-->
-                    <style>
-                        .orbia-choose-wrapper {
-                            position: relative;
-                            background-size: cover;
-                            background-position: center;
-                        }
+                <!--====== Start Animated Text ======-->
+                <style>
+                    .orbia-choose-wrapper {
+                        position: relative;
+                        background-size: cover;
+                        background-position: center;
+                    }
 
-                        .orbia-choose-wrapper::before {
-                            content: "";
-                            position: absolute;
-                            inset: 0;
-                            background: #49b1b5af;
-                            /* overlay color */
-                            z-index: 1;
-                        }
+                    .orbia-choose-wrapper::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: #49b1b5af;
+                        /* overlay color */
+                        z-index: 1;
+                    }
 
-                        .orbia-choose-wrapper .container-fluid {
-                            position: relative;
-                            z-index: 2;
-                        }
+                    .orbia-choose-wrapper .container-fluid {
+                        position: relative;
+                        z-index: 2;
+                    }
 
-                        .main-footer {
-                            position: relative;
-                            background-image: url("https://www.leetx.com/en/web/upload/2024/07/24/17217937863513gtgyh.png");
-                            background-size: cover;
-                            background-position: center;
-                            z-index: 1;
-                        }
+                    .main-footer {
+                        padding-top: 60px;
+                        position: relative;
+                        background-image: url("https://www.leetx.com/en/web/upload/2024/07/24/17217937863513gtgyh.png");
+                        background-size: cover;
+                        background-position: center;
+                        z-index: 1;
+                    }
 
-                        .main-footer::before {
-                            content: "";
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background: #186364bc;
-                            /* Dark Overlay */
-                            z-index: -1;
-                        }
-                    </style>
+                    .main-footer::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: #186364bc;
+                        /* Dark Overlay */
+                        z-index: -1;
+                    }
+                </style>
 
             </main>
             <!--======  Start Footer  ======-->
@@ -1934,7 +2506,7 @@
                 <div class="footer-bottom-wrapper bg_cover" data-src="assets/images/footer/footer-widget-bg.jpg">
                     <div class="container">
                         <!--=== Footer Widget Area ===-->
-                        <div class="footer-widget-area pt-100 ">
+                        <div class="footer-widget-area  ">
                             <div class="row">
                                 <div class="col-lg-4 col-md-6 order-1">
                                     <!--=== Footer Widget ===-->
@@ -2007,19 +2579,19 @@
                                             <h4 class="widget-title" style="margin-bottom: 20px;">Contact us </h4>
                                             <!-- <div class="line-wrap"><span></span><span></span><span></span></div> -->
                                             <div class="orbia-info-box style-two mb-20">
-                                               
+
                                                 <div class="info">
                                                     <p>9550 Bolsa Ave #126, Pune</p>
                                                 </div>
                                             </div>
                                             <div class="orbia-info-box style-two mb-20">
-                                               
+
                                                 <div class="info">
                                                     <p><a href="mailto:info@touron.com">info@lextron.com</a></p>
                                                 </div>
                                             </div>
                                             <div class="orbia-info-box style-two mb-20">
-                                               
+
                                                 <div class="info">
                                                     <p><a href="tel:(+256)214203215">+91 214 203 215</a></p>
                                                 </div>
