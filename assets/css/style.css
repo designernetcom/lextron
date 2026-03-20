@@ -323,12 +323,12 @@ label {
 }
 .section-title h2 {
   font-size: 52px;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 @media (max-width: 1650px) {
   .section-title h2 {
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 1199.98px) {
@@ -1313,7 +1313,7 @@ label {
     display: none;
     -webkit-transition: none;
     transition: none;
-    margin-left: 30px;
+    margin-left: 15px;
   }
   .header-navigation .theme-nav-menu .main-menu ul li .dd-trigger {
     position: absolute;
@@ -1453,16 +1453,16 @@ label {
   }
 }
 .header-one .header-navigation .main-menu ul > li .sub-menu li a {
-  color: var(--heading-color);
+  color: black;
 }
 .header-one .header-navigation .main-menu ul > li .sub-menu li a:hover {
   color: var(--primary-color);
 }
 .header-one .header-navigation .main-menu ul > li .sub-menu li:hover > a {
-  color: var(--primary-color);
+  color: black;
 }
 .header-one .header-navigation .main-menu ul > li:hover > a {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .header-one .header-navigation .nav-right-item .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.7);
